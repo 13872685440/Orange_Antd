@@ -7,5 +7,10 @@ module.exports = {
         'useBuiltIns': 'entry'
       }
     ]
-  ]
+  ],
+  env: {
+    development: {
+      plugins: ['dynamic-import-node']
+    }
+  }
 }

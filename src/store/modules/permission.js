@@ -22,7 +22,7 @@ export const generator = (routerMap) => {
   return routerMap.map(item => {
     var com = item.component
     if (item.key && (item.key.indexOf("/") === -1)) {
-      constantRouterComponents[item.key] = () => import('@/views' + item.component)
+      constantRouterComponents[item.key] = () => Promise.resolve(require(`@/views${item.component}`).default)
       com = item.key
     }
 
